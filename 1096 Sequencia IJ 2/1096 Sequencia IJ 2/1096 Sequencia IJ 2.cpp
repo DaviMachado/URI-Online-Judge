@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i;
+
+	for (i = 1; i <= 9; i += 2)
+	{
+		cout << "I=" << i << " " << "J=7" << endl;
+		cout << "I=" << i << " " << "J=6" << endl;
+		cout << "I=" << i << " " << "J=5" << endl;
+	}
+
+	system("PAUSE");
+	return 0;
+}
