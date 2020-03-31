@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+
+/*
+Criar um matriz A 2x2 do tipo inteiro
+• Solicitar p/ o usuário os valores  inteiro positivo (consistir) e inserir na matriz A
+• Criar uma matrizB 2x2 do tipo inteiro
+• Gravar na matrizB o fatorial de cada elemento da matrizA
+• Mostrar as matrizes
+*/
+
+int fatorial(int n)		// função recursiva para calcular o fatorial
+{
+	if (n == 1)
+		return n;
+	return fatorial(n - 1) * n;
+}
+
+int main()
+{
+	int matrizA[2][2], matrizB[2][2];	// crio as duas matrizes 2x2
+	for (int i = 0; i < 2; i++)		// primeiro for para andar na linha
+	{
+		for (int j = 0; j < 2; j++)		// segundo for para andar na coluna
+		{
+			do		// para consistir o valor
+			{
+				cout << "Insira o numero: ";
+				cin >> matrizA[i][j];	// coloco na matriz na linhaXcoluna atual
+			} while (matrizA[i][j] <= 0);
+		}
+	}
+	// Agora vou calcular o fatorial de cada indice da matrizA, e passar o resultado para matrizB
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 2; j++)
+		{
+			matrizB[i][j] = fatorial(matrizA[i][j]);	// matrizB recebe o fatorial do indice atual da matrizA
+		}
+	}
+	// for para exibir a matrizA
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 2; j++)
+		{
+			cout << "MatrizA (" << i << "," << j << "): " << matrizA[i][j] << endl;
+		}
+	}
+	cout << endl; // pulo uma linha
+	// for para exibir a matrizB
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 2; j++)
+		{
+			cout << "MatrizB (" << i << "," << j << "): " << matrizB[i][j] << endl;
+		}
+	}
+}
